@@ -28,36 +28,27 @@ function sinodio_scripts() {
     wp_enqueue_style( 'normalize', get_template_directory_uri().'/normalize.css');
     wp_enqueue_style('style-css', get_stylesheet_uri() );
     wp_enqueue_style( 'media-style', get_template_directory_uri().'/media.css');
+    wp_enqueue_style('animate', '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css' );
 
 // Scripts
     
     wp_enqueue_script( 'jquery');
-    wp_enqueue_script( 'scripts', get_template_directory_uri().'/js/scripts.js');
+    wp_enqueue_script( 'menu', get_template_directory_uri().'/js/menu.js');
+    wp_enqueue_script( 'classie', get_template_directory_uri().'/js/classie.js', array(), false, true);
+    wp_enqueue_script( 'uisearch', get_template_directory_uri().'/js/uisearch.js', array(), false, true);
 
     if(is_home() || is_front_page()) {
-        wp_enqueue_script( 'scripts-index', get_template_directory_uri().'/js/scripts-index.js');
-        wp_enqueue_script( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
-        wp_enqueue_style('slick-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+        wp_enqueue_script( 'header', get_template_directory_uri().'/js/header.js');
         }
 }
 
 add_action( 'wp_enqueue_scripts', 'sinodio_scripts' );
 
-// Scripts for index page only
-
-// add_action('wp', 'index_page_scripts');
-
-// function index_page_scripts(){
-//    if( is_front_page() ) {
-//        add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
-//    }
-//}
-
-// function my_scripts_method() {
-//    wp_enqueue_script( 'scripts-index', get_template_directory_uri().'/js/scripts-index.js');
-//    wp_enqueue_script( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
-//    wp_enqueue_style('slick-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
-//}
+function load_font_google() {
+  wp_enqueue_style( 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Zilla+Slab+Highlight:wght@400;700&family=Zilla+Slab:ital,wght@0,400;0,700;1,400;1,700&display=swap' );
+  wp_enqueue_style( 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
+}
+add_action( 'wp_enqueue_scripts', 'load_font_google' );
 
 // SVG support
 
