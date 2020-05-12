@@ -31,7 +31,7 @@
             
             <?php
                 global $post;
-                $myposts = get_posts( 'numberposts=3&category=41' );
+                $myposts = get_posts( 'numberposts=3&category=45&order=ASC' );
                 foreach( $myposts as $post ){
                 setup_postdata( $post );
             ?>
@@ -53,9 +53,17 @@
                     </div>
                 </div>
                 <div class="person-name">
-                    <p><span class="profession"><?php the_field('cf-category'); ?></span></p>
-                    <p><span class="name"><?php the_field('cf-name'); ?></span></p>
-                    <p><span class="tag"><?php the_field('cf-prof'); ?></span></p>
+                    <p><span class="profession"><?php 
+                $category = get_the_category(); 
+                echo $category[0]->cat_name; ?></span></p>
+                    <p><span class="name"><?php the_title(); ?></span></p>
+                    <p><?php 
+                    $posttags = get_the_tags();
+                    if ($posttags) {
+                        foreach($posttags as $tag) {
+                            echo "<span class='tag'>" . $tag->name . "</span>" ; }
+                    }
+                ?></span></p>
                 </div>
             </div>
 
@@ -76,29 +84,7 @@
         <h2>ETIQUETAS DE PERSONAS</h2>
     </div>
         <div class="alltags">
-            <a href="ABOGADO">ABOGADO</a> 
-            <a href="">ALCALDE</a> 
-            <a href="">CANTANTE</a> 
-            <a href="">CIENTISTA POLÍTICO</a>
-            <a href="ABOGADO">COMUNICADOR</a> 
-            <a href="">CONVERGENCIA SOCIAL</a> 
-            <a href="">DC</a> 
-            <a href="">DIPUTADO</a>
-            <a href="ABOGADO">ABOGADO</a> 
-            <a href="">ALCALDE</a> 
-            <a href="">CANTANTE</a> 
-            <a href="">CIENTISTA POLÍTICO</a>
-            <a href="ABOGADO">COMUNICADOR</a> 
-            <a href="">CONVERGENCIA SOCIAL</a> 
-            <a href="">DC</a> 
-            <a href="">DIPUTADO</a>
-            <a href="ABOGADO">ABOGADO</a> 
-            <a href="">ALCALDE</a> 
-            <a href="">CANTANTE</a> 
-            <a href="">CIENTISTA POLÍTICO</a>
-            <a href="ABOGADO">COMUNICADOR</a> 
-            <a href="">CONVERGENCIA SOCIAL</a> 
-            <a href="">DC</a> 
+            <?php wp_tag_cloud('orderby=name&smallest=10.5&largest=10.5'); ?>
         </div>
     </div>
 </section>
@@ -108,15 +94,15 @@
 <section class="person-section">
 <div class="wrap">
     <div class="section-title">
-        <h3>Futbolista</h3>
+        <h3>Reposición</h3>
     </div>
     <div class="person-flex">
         
         <?php
             global $post;
-            $myposts = get_posts( 'numberposts=9&category=41' );
+            $myposts = get_posts( 'numberposts=12' );
             foreach( $myposts as $post ){
-            etup_postdata( $post );
+            setup_postdata( $post );
         ?>
 
         <div class="person">
@@ -124,9 +110,18 @@
                 <?php the_post_thumbnail(); ?>
             </div>
             <div class="person-name">
-                <p><span class="profession"><?php the_field('cf-category'); ?></span></p>
-                <p><span class="name"><?php the_field('cf-name'); ?></span></p>
-            <p><span class="tag"><?php the_field('cf-prof'); ?></span></p>
+                <p><span class="profession"><?php 
+                $category = get_the_category(); 
+                echo $category[0]->cat_name; ?></span></p>
+                <p><span class="name"><?php the_title(); ?></span></p>
+            <p><span class="tag">
+                <?php 
+                    $posttags = get_the_tags();
+                    if ($posttags) {
+                        foreach($posttags as $tag) {
+                            echo "<span class='tag'>" . $tag->name . "</span>" ; }
+                    }
+                ?></span></p>
             </div>
             <div class="person-aggression">
                 <div class="bar-wrap">

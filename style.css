@@ -93,7 +93,7 @@ h4{
   font-weight: bold;
   font-size: 42px;
   color: #fff;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   line-height: 1.2em;
   white-space: nowrap;
 }
@@ -124,6 +124,16 @@ h4{
   font-weight: 500;
   font-size: 14px;
 /*  margin-bottom: 26px; */
+}
+
+.tag:after{
+  content: ', ';
+  margin-right: 4px;
+}
+
+.tag:last-child:after{
+  content: '';
+  margin-right: 0;
 }
 
 .strong{
@@ -528,6 +538,11 @@ li.current-menu-item a,
   height: 184px;
   overflow: hidden;
   margin-bottom: 24px;
+}
+
+.person-face img{
+  width: 184px;
+  height: 184px;
 }
 
 .person-face img,

@@ -45,10 +45,15 @@
         <section class="header-person-flex">
         
             <?php
-                global $post;
-                $myposts = get_posts( 'numberposts=2&category=41' );
-                foreach( $myposts as $post ){
-                setup_postdata( $post );
+                global $page;
+                $mypages = get_pages( array( 
+                'meta_key'     => '_wp_page_template', 
+                'meta_value'   => 'big.php', 
+                'hierarchical' => 0
+                ));
+
+            foreach( $mypages as $page ){
+                setup_postdata( $page );
             ?>
 
             <div class="header-person animate__animated animate__fadeIn">

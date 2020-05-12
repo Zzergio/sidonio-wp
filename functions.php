@@ -50,11 +50,19 @@ function sinodio_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'sinodio_scripts' );
 
-function load_font_google() {
-  wp_enqueue_style( 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Zilla+Slab+Highlight:wght@400;700&family=Zilla+Slab:ital,wght@0,400;0,700;1,400;1,700&display=swap' );
-  wp_enqueue_style( 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
-}
-add_action( 'wp_enqueue_scripts', 'load_font_google' );
+// Google Fonts
+
+function load_fonts(){            
+    wp_register_style('zilla', 'https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    wp_enqueue_style( 'zilla'); 
+    wp_register_style('zilla-highlight', 'https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@400;700&display=swap');
+    wp_enqueue_style( 'zilla-highlight');   
+    wp_register_style('montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+    wp_enqueue_style( 'montserrat'); 
+    wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+    wp_enqueue_style( 'font-awesome');       
+}    
+add_action('wp_print_styles', 'load_fonts');
 
 // SVG support
 
