@@ -1,0 +1,211 @@
+@media (max-width: 700px) {
+
+.menu-icon {
+  display: inline-block;
+  z-index: 2000;
+  margin-top: 5px;
+}
+  
+.nav {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  flex-flow: column wrap; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 0;
+  z-index: 1000;
+  padding-top: 140px;
+  height: 100vh;
+  background: #202020;
+  transition: all 350ms;
+}
+
+.menu-state-open {
+  display: flex;  
+}
+
+.nav li{
+  margin-bottom: 25px;
+}
+
+.nav li a {
+    font-size: 36px;
+    text-align: center;
+    padding: 15px 0;
+    color: #FFF;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.nav.nav-inner li a{
+  color: #fff;
+}
+
+li.current-menu-item a,
+.nav-inner li.current-menu-item a{
+  color: #7B9E17;
+}
+
+.white span{
+  background: #fff;
+}
+
+.animate__fadeInRight{
+  display: none;
+}
+
+.top-header{
+  margin-bottom: 70px;
+}
+
+.slogan h1{
+  font-size: 48px;
+}
+
+.about-flex{
+  flex-direction: column-reverse;
+}
+
+.about-search{
+  margin-bottom: 30px;
+}
+
+.about-search input {
+    width: 100%;
+}
+
+.section-title{
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+
+.section-title .btn-small{
+  margin-bottom: 20px;
+}
+
+.top-person-flex{
+  justify-content: space-around;
+}
+
+.top-person{
+  margin-bottom: 40px;
+}
+
+.top-person:last-child{
+  margin-bottom: 0;
+}
+
+.person-flex{
+  justify-content: space-around;
+}
+
+.footer-flex{
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.footer-logo{
+  margin: 20px 0;
+}
+
+}
+
+@media (max-width: 480px) {
+
+.nav li {
+    margin-left: 5px;
+}
+
+.top-header{
+  margin-bottom: 55px;
+}
+
+.header-person-face img{
+    display: none;
+}
+
+.header-person-face {
+    padding-right: 0;
+}
+
+.header-person-box{
+   position: static;
+   text-align: center;
+}
+
+.header-person-item {
+    margin-bottom: 20px;
+}
+
+.slogan h1 {
+    font-size: 32px;
+}
+
+.sb-search {
+    margin-left: 0;
+    display: none;
+}
+
+.name-big{
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.tag-big{
+  display: none;
+}
+
+.inner-personas-flex{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inner-personas-left{
+  max-width: 100%;
+  margin-right: 0;
+}
+
+.inner-personas-left .alltags {
+  margin-bottom: 40px;
+}
+
+.person{
+  width: 100%;
+}
+
+.inner-personas-left ul{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.inner-personas-left ul li{
+  margin-right: 20px;
+}
+
+.form-flex{
+  flex-direction: column;
+}
+
+.form-input{
+  width: 100%;
+}
+
+#user-name, #user-surname{
+  width: 100%;
+}
+
+#user-name{
+  margin-bottom: 15px;
+}
+
+.uploader{
+  width: 100%;
+}
+
+
+}
