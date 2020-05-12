@@ -14,7 +14,7 @@
 <header class="header">
     <div class="header-wrap">
         <div class="top-header">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo-index.svg" alt=""></a>
+            <img src="<?php bloginfo('template_url'); ?>/img/logo-index.svg" alt="">
             <div class="search-menu">
                 <div id="sb-search" class="sb-search">
                     <form>
@@ -45,16 +45,21 @@
         <section class="header-person-flex">
         
             <?php
-                global $page;
-                $mypages = get_pages( array( 
-                'meta_key'     => '_wp_page_template', 
-                'meta_value'   => 'big.php', 
-                'hierarchical' => 0
-                ));
+               // WP_Query arguments
+                $args = array(
+                'post_type'              => array( 'page' ),
+                'post_status'            => array( 'publish' ), 
+                'meta_key'     => array( '_wp_page_template' ), 
+                'meta_value'   => array( 'big.php' )
+                );
 
-            foreach( $mypages as $page ){
-                setup_postdata( $page );
-            ?>
+                // The Query
+                $page_query = new WP_Query( $args );
+
+                // The Loop
+                while ( $page_query->have_posts() ) {
+                    $page_query->the_post();
+                ?>
 
             <div class="header-person animate__animated animate__fadeIn">
                 <div class="header-person-face">
