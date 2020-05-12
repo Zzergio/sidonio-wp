@@ -3,6 +3,12 @@
 function sinodio_setup() {
 
     add_theme_support('title-tag');
+
+    add_theme_support('post-thumbnails');
+    
+    add_image_size( 'sinodio-mini', 212, 212, true );
+
+    add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', array(
         'search-form',
@@ -65,3 +71,11 @@ add_filter('excerpt_more', function($more) {
 add_filter( 'excerpt_length', function(){
     return 20;
 } );
+
+// CF7 Customization
+
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    return $content;
+});
