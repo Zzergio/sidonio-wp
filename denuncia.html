@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sin Odio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:image" content="img/preview.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@400;700&family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script> 
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="header inner">
+    <div class="header-wrap">
+        <div class="top-header">
+            <a href="/"><img src="img/logo-inner.svg" alt=""></a>
+            <div class="search-menu">
+                <div id="sb-search" class="sb-search sb-search-inner">
+                    <form>
+                        <input class="sb-search-input" placeholder="Escribe el nombre de quien buscas" type="text" value="" name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"><img src="img/search-inner.svg" alt=""></span>
+                    </form>
+                </div>
+                <nav class="menu nav-inner">
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="personas.html">Personas</a></li>
+                        <li class="current-menu-item"><a href="denuncia.html">Denuncia</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 2 COLUMNS SECTION -->
+
+<section class="inner-personas">
+    <div class="wrap">
+        <div class="section-title">
+            <h2>Denuncia</h2>
+        </div>
+        <div class="inner-form">
+            <div class="pre-text">
+                <p>¿Crees que algún comunicador, líder de opinión o político está usando, instigando o relativizando el uso del odio como parte de su argumentación?</p>
+            </div>
+            <div class="cont-form">
+                <p>Ayudanos a completar el mapa de odio e instigación al odio en nuestro país y denuncia dando elementos de respaldo. Cualquier información personal del denunciante sera confidencial.</p>
+                
+            <form action="">
+
+                <label class="control-label" for="user-email">Correo electrónico del denunciante *</label>
+                <input type="email" id="user-email" class="form-input" name="user-email">
+
+                <label class="control-label" for="user-name">Nombre del denunciado *</label>
+                <div class="form-flex">
+                    <input type="text" id="user-name" class="form-input" name="user-name" placeholder="Nombre">
+                    <input type="text" id="user-surname" class="form-input" name="user-surname" placeholder="Apellidos">
+                </div>
+
+                <label class="control-label" for="situation">Describe la situación *</label>
+                <textarea id="situation" class="form-input" name="situation"></textarea>
+
+                <label class="control-label" for="where">¿Dónde sucedió? *</label>
+                <textarea id="where" class="form-input" name="where"></textarea>
+
+                <label class="control-label" for="category">¿A qué grupo pertenece el denunciado? *</label>
+                
+                <div class="form_radio">
+                    <input type="radio" id="choice1" name="category" value="Periodista o comunicador social">
+                    <label for="choice1" class="radio">Periodista o comunicador social</label>
+                    <input type="radio" id="choice2" name="category" value="Representante o funcionario de uno de los 3 poderes del Estado">
+                    <label for="choice2" class="radio">Representante o funcionario de uno de los 3 poderes del Estado</label>
+                    <input type="radio" id="choice3" name="category" value="Líderes políticos o militantes de algún partido político">
+                    <label for="choice3" class="radio">Líderes políticos o militantes de algún partido político</label>
+                </div>
+
+                <label class="control-label" for="uploader">Subida de archivo</label>
+                <div class="uploader">
+                    Haga clic o arrastre un archivo a esta área para cargar.
+                    <img src="img/uploader.svg" alt="">
+                </div>
+
+                <button type="submit" class="btn-green">ENVIAR <i class="fas fa-chevron-right"></i></button>
+                
+            </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-flex">
+            <div class="footer-copy">
+                <p>Copyright © 2020 #sinodio. Reservados todos los derechos.</p>
+            </div>
+            <div class="footer-logo">
+                <a href="/"><img src="img/logo-footer.svg" alt=""></a>
+            </div>
+            <div class="footer-social">
+                <p>Difunde</p>
+                <a href="https://twitter.com/share?text=#SINODIO&amp;url=http%3A%2F%2Fsinodio.cl%2F" title="Compartir en Twitter"  onclick="owpShareOnClick( this.href );return false;" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fsinodio.cl%2F" title="Compartir en Facebook"  onclick="owpShareOnClick( this.href );return false;" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fsinodio.cl%2F&amp;title=#SINODIO&amp;summary=%23sinodio+es+una+plataforma+creada+para+analizar+y+exponer+el+nivel+de+odio+y+violencia+en+el+lenguaje+de+politicos%2C+comunicadores+sociales%2C+activistas+y+lideres+de+opinion+en+general+provenientes+de+los+diferentes+sectores+de+opinion+de+nuestra+sociedad.+Cumplimos%26hellip%3B&amp;source=http://sinodio.cl/" title="Compartir en LinkedIn"  onclick="owpShareOnClick( this.href );return false;" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script>
+    new UISearch( document.getElementById( 'sb-search' ) );
+</script>	
+</body>
+</html>

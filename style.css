@@ -1,3 +1,17 @@
+/*   
+Theme Name: Sinodio Theme
+Theme URI: http://rieznyk.pp.ua
+Description: Sinodio Theme
+Author: Serhii Rieznyk
+Author URI: http://rieznyk.pp.ua
+Template: 
+Version: 1.0
+.
+
+.
+*/ 
+
+
 /* Common text styles */
 
 *{
@@ -213,7 +227,7 @@ i{
   margin-bottom: 46px;
 }
 
-.main-menu{
+.menu{
 
 }
 
@@ -237,11 +251,11 @@ ul.nav  li{
 }
 
 .nav li a:hover,
-.nav.nav-inner li a:hover{
+.nav-inner .nav li a:hover{
   color: #7B9E17;
 }
 
-.nav.nav-inner li a{
+.nav-inner .nav li a{
   color: #202020;
 }
 
