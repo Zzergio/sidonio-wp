@@ -1,32 +1,42 @@
-<?php
-/*
-Template Name: Personas
-*/
-?>
+<?php 
+/**
+ * Template Name: Search Page
+ */
+?> 
 
 <?php get_header(); ?>
 
 <section class="inner-personas">
     <div class="wrap">
-        
         <div class="inner-personas-flex">
         	<?php get_sidebar(); ?>
-        	<div class="inner-personas-right">
+        	<div class="inner-personas-right" style="width: 100%;">
                 <div class="about-search">
                     <?php get_search_form(); ?>
                 </div>
                 <div class="section-title">
-                    <h2><?php the_title(); ?></h2>
+                    <h2>Resultados de búsqueda</h2>
                 </div>
-                <div class="person-flex">
-					
-					<?php
-            global $post;
-            $myposts = get_posts( 'numberposts=12' );
-            foreach( $myposts as $post ){
-            setup_postdata( $post );
-        ?>
+			
+<?php
+	$s=get_search_query( $escaped = true );
+	$args = array( 's' =>$s );
 
+// The Query
+
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+?>
+
+	<div class="search-results">
+       	<p>Resultados de búsqueda para: <span class="search-word">"<?php the_search_query() ?>"</span></p>
+    </div>
+    <div class="person-flex">
+
+<?php
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+?>
         <div class="person">
             <div class="person-face">
                 <?php the_post_thumbnail(); ?>
@@ -52,11 +62,18 @@ Template Name: Personas
                 <div class="person-digits" style="margin-left: calc( <?php the_field('cf-rate'); ?>% - 13px );"><p><?php the_field('cf-rate'); ?>%</p></div>
             </div>
         </div>
-
-            <?php 
-                }
-                wp_reset_postdata();
-            ?>
+<?php
+        }
+    }else{
+?>
+	<div class="search-results">
+       	<p><span class="search-word">Nada encontrado (</span></p>
+       	<p>Lo sentimos, pero nada coincide con sus criterios de búsqueda. Intente nuevamente con algunas palabras clave diferentes.</p>
+    </div>
+    <div class="person-flex">
+          
+    </div>
+<?php } ?>
 
                 </div> <!-- Flex ends -->
             </div>

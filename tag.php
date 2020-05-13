@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: Personas
-*/
-?>
-
 <?php get_header(); ?>
 
 <section class="inner-personas">
@@ -11,23 +5,22 @@ Template Name: Personas
         
         <div class="inner-personas-flex">
         	<?php get_sidebar(); ?>
-        	<div class="inner-personas-right">
+        	<div class="inner-personas-right" style="width: 100%;">
                 <div class="about-search">
                     <?php get_search_form(); ?>
                 </div>
                 <div class="section-title">
-                    <h2><?php the_title(); ?></h2>
+                    <h2><?php single_cat_title(); ?></h2>
                 </div>
+
                 <div class="person-flex">
 					
-					<?php
-            global $post;
-            $myposts = get_posts( 'numberposts=12' );
-            foreach( $myposts as $post ){
-            setup_postdata( $post );
-        ?>
+				<?php if ( have_posts() ) : 
+                    while ( have_posts() ) :
+                        the_post();
+                ?>
 
-        <div class="person">
+            <div class="person">
             <div class="person-face">
                 <?php the_post_thumbnail(); ?>
             </div>
@@ -53,10 +46,16 @@ Template Name: Personas
             </div>
         </div>
 
-            <?php 
-                }
-                wp_reset_postdata();
-            ?>
+
+                <?php endwhile;
+                    else : ?>
+                    <div class="search-results">
+                        <p><span class="search-word">Nada encontrado (</span></p>
+                        <p>Esta categoria esta vacia</p>
+                    </div>
+                <?php
+                endif;
+                ?>
 
                 </div> <!-- Flex ends -->
             </div>

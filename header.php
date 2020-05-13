@@ -10,17 +10,15 @@
 <body>
 
 <!-- HEADER -->
-
 <header class="header inner">
     <div class="header-wrap">
         <div class="top-header">
             <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo-inner.svg" alt=""></a>
             <div class="search-menu">
-                <div id="sb-search" class="sb-search sb-search-inner">
-                    <form>
-                        <input class="sb-search-input" placeholder="Escribe el nombre de quien buscas" type="text" value="" name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"><img src="<?php bloginfo('template_url'); ?>/img/search-inner.svg" alt=""></span>
+                <div class="about-search-top">
+                    <form role="search" method="get" class="search-form" action="<?php home_url( '/' ) ?>">
+                        <input type="search" id="search-field" class="search-field-top" placeholder="" value="<?php get_search_query() ?>" title="" name="s" />
+                        <input id="submit-top" type="submit" class="search-submit" value="" />
                     </form>
                 </div>
                 <nav class="main-menu nav-inner">

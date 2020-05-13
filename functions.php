@@ -40,8 +40,7 @@ function sinodio_scripts() {
     
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'menu', get_template_directory_uri().'/js/menu.js');
-    wp_enqueue_script( 'classie', get_template_directory_uri().'/js/classie.js', array(), false, true);
-    wp_enqueue_script( 'uisearch', get_template_directory_uri().'/js/uisearch.js', array(), false, true);
+    wp_enqueue_script( 'search', get_template_directory_uri().'/js/search.js');
 
     if(is_home() || is_front_page()) {
         wp_enqueue_script( 'header', get_template_directory_uri().'/js/header.js');
@@ -87,3 +86,28 @@ add_filter('wpcf7_form_elements', function($content) {
 
     return $content;
 });
+
+// Search Form
+
+add_filter( 'get_search_form', 'my_search_form' );
+function my_search_form( $form ) {
+
+    $form = '
+    <form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+        <label><span class="strong">Escribe el nombre de quien buscas</span>
+        <input type="search" class="search-field" placeholder="p.ej, Piñera" value="' . get_search_query() . '" name="s" title="" /></label>
+        <input type="submit" class="search-submit" value="" />
+    </form>';
+
+    return $form;
+};
+
+// Search Filter
+
+function searchfilter($query) {
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type',array('post'));
+    }
+return $query;
+}
+add_filter('pre_get_posts','searchfilter');

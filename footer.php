@@ -27,11 +27,7 @@
         </div>
     </div>
 </footer>
-<!--
-<script>
-    new UISearch( document.getElementById( 'sb-search' ) );
-</script>	
--->
+
 </body>
 <?php wp_footer(); ?>
 </html>

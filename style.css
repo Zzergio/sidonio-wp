@@ -19,9 +19,15 @@ Version: 1.0
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+}
 body{
-  padding: 0;
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .wrap{
@@ -83,6 +89,13 @@ h4{
   font-size: 16px;
   line-height: 1.5em;
 }
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .name-big, .name, .profession, .tag-big, .tag{
   display: inline-block;
@@ -149,7 +162,8 @@ h4{
 
 .btn-small,
 .btn-big,
-.btn-green{
+.btn-green,
+.cd-upload-btn{
   font-weight: bold;
   font-size: 11px;
   text-transform: uppercase;
@@ -162,7 +176,8 @@ h4{
 }
 
 .btn-small:hover,
-.btn-big:hover{
+.btn-big:hover,
+.cd-upload-btn:hover{
   border: 2px solid #7B9E17;
   color: #7B9E17;
 }
@@ -205,7 +220,7 @@ i{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .section-title h2{
@@ -740,138 +755,6 @@ li.current-menu-item a,
   width: 100%;
 }
 
-.sb-search {
-  font-family: 'Montserrat', sans-serif;
-  position: relative;
-  width: 0%;
-  min-width: 60px;
-  height: 40px;
-  float: right;
-  overflow: hidden;
-  -webkit-transition: width 0.3s;
-  -moz-transition: width 0.3s;
-  transition: width 0.3s;
-  -webkit-backface-visibility: hidden;
-  margin-left: 60px;
-}
-
-.sb-search-input {
-  font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  outline: none;
-  background: transparent;
-  width: 100%;
-  height: 60px;
-  margin: 0;
-  z-index: 10;
-  padding: 0 65px 23px 15px;
-  font-family: inherit;
-  font-size: 14px;
-  color: #fff;
-}
-
-.sb-search-input::-webkit-input-placeholder {
-  color: #D9D9D9;
-}
-
-.sb-search-input:-moz-placeholder {
-  color: #D9D9D9;
-}
-
-.sb-search-input::-moz-placeholder {
-  color: #D9D9D9;
-}
-
-.sb-search-input:-ms-input-placeholder {
-  color: #D9D9D9;
-}
-
-.sb-search-inner .sb-search-input::-webkit-input-placeholder {
-  color: #A4A4A4;
-}
-
-.sb-search-inner .sb-search-input:-moz-placeholder {
-  color: #A4A4A4;
-}
-
-.sb-search-inner .sb-search-input::-moz-placeholder {
-  color: #A4A4A4;
-}
-
-.sb-search-inner .sb-search-input:-ms-input-placeholder {
-  color: #A4A4A4;
-}
-
-.sb-icon-search,
-.sb-search-submit  {
-  width: 40px;
-  height: 40px;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 4px 0 10px 0;
-  margin: 0;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.sb-search-submit {
- 
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
-    filter: alpha(opacity=0); /* IE 5-7 */
-    opacity: 0;
-  color: transparent;
-  outline: none;
-  z-index: -1;
-}
-
-.sb-icon-search {
-  z-index: 90;
-}
-
-.sb-search.sb-search-open,
-.no-js .sb-search {
-  width: 100%;
-  border: 2px #D9D9D9 solid;
-  border-radius: 20px;
-}
-
-.sb-search.sb-search-open .sb-icon-search,
-.no-js .sb-search .sb-icon-search {
-  color: #fff;
-  z-index: 11;
-}
-
-.sb-search.sb-search-open .sb-search-submit,
-.no-js .sb-search .sb-search-submit {
-  z-index: 90;
-}
-
-.sb-search-inner .sb-search-input {
-  color: #A4A4A4;
-}
-
-.sb-search-inner.sb-search.sb-search-open,
-.no-js .sb-search {
-  width: 100%;
-  border: 2px #000000 solid;
-  border-radius: 20px;
-} 
-
-.sb-search-inner.sb-search.sb-search-open .sb-icon-search,
-.no-js .sb-search .sb-icon-search {
-  color: #000;
-}
-
-.sb-search-inner .sb-search-inner .sb-search-input {
-  color: #000;
-}
-
 .animate__animated.animate__fadeIn {
   --animate-duration: 3s;
 }
@@ -894,7 +777,7 @@ li.current-menu-item a,
 }
 
 .inner-personas-right .about-search{
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 
 .inner-personas-right .about-search input{
@@ -915,6 +798,10 @@ li.current-menu-item a,
 
 .inner-personas-right .about-search input[type='submit']:hover{
   background: url(img/search-hover.svg) center center no-repeat;
+}
+
+.inner-personas-right h3{
+  margin-bottom: 40px;
 }
 
 .inner-personas-left h2{
@@ -970,7 +857,7 @@ li.current-menu-item a,
   margin-bottom: 28px;
 }
 
-.cont-form .control-label{
+.control-label{
   font-size: 14px;
   font-weight: bold;
   display: block;
@@ -983,11 +870,15 @@ li.current-menu-item a,
   margin-bottom: 28px;
 }
 
+.wpcf7-list-item{
+  display: block !important;
+}
+
 .form_radio input[type=radio] {
   display: none;
 }
 
-.form_radio label {
+.form_radio span.wpcf7-list-item-label {
   display: block;
   cursor: pointer;
   position: relative;
@@ -999,9 +890,9 @@ li.current-menu-item a,
   font-size: 14px;
 }
 
-.form_radio label:before {
+.form_radio span.wpcf7-list-item-label:before {
   content: "";
-  display: inline-block;
+  display: block;
   width: 21px;
   height: 21px;
   position: absolute;
@@ -1011,12 +902,21 @@ li.current-menu-item a,
   border-radius: 100%;
 }
  
-.form_radio input[type=radio]:checked + label:before {
+.form_radio input[type=radio]:checked + span.wpcf7-list-item-label:before {
+  border: 1px solid #000;
+  background: url(img/radio.svg) center center no-repeat;
+}
+
+.form_radio input[type=radio]:checked + span.wpcf7-list-item-label{
+  font-style: italic;
+}
+
+.label-checked{
   border: 1px solid #000;
   background: url(img/radio.svg) center center no-repeat;
 }
  
-.form_radio label:hover:before {
+.form_radio span.wpcf7-list-item-label:hover:before {
   filter: brightness(120%);
 }
 
@@ -1092,3 +992,149 @@ textarea.form-input{
   margin-bottom: 40px;
 }
 
+/* Search results */
+
+.search-results p{
+  font-family: 'Zilla Slab', serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.search-word{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* File Upload Customization */
+
+.codedropz-upload-handler{
+  background: #EEEEEE;
+  border: 1px solid #C6C6C6;
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 400px;
+}
+
+.codedropz-upload-inner h3{
+  font-size: 13px;
+  color: #202020;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 40px;
+  margin-bottom: 10px;
+}
+
+.codedropz-upload-handler span{
+  display: none;
+}
+
+.dnd-upload-status .dnd-upload-details {
+    padding-left: 10px;
+    width: 300px;
+}
+
+.dnd-upload-status .dnd-upload-details .name {
+    font-size: 14px;
+    color: #7B9E17;
+    font-family: 'Montserrat', sans-serif;
+    padding-right: 25px;
+    display: flex;
+}
+
+.dnd-upload-status .dnd-upload-details .name em {
+    color: #202020;
+    font-weight: 700;
+}
+
+.dnd-upload-status .dnd-upload-details .dnd-progress-bar {
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #565555;
+    height: 4px;
+    margin-bottom: 6px;
+}
+
+.dnd-upload-status {
+    display: flex;
+    padding: 4px 0;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.dnd-upload-status .dnd-upload-details .dnd-progress-bar span{
+  background: #7B9E17;
+  color: transparent;
+}
+
+.dnd-upload-status .dnd-upload-details .remove-file {
+    position: absolute;
+    left: 350px;
+    top: 6px;
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.codedropz-upload-wrapper span.has-error-msg {
+    display: inline-block;
+    color: #ff0000;
+    padding: 5px 0;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Top Search */
+
+.about-search-top{
+  position: relative;
+}
+
+.about-search-top input{
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px transparent solid;
+  color: #fff;
+  padding-left: 10px;
+}
+
+.about-search-top input:focus{
+  
+}
+
+.about-search-top input[type='submit']{
+  position: absolute;
+  bottom: 5px;
+  right: 4px;
+  border: none;
+  height: 32px;
+  width: 32px;
+  background: url(img/search-white.svg) center center no-repeat;
+  cursor: pointer;
+  transition: all 350ms;
+}
+
+.search-open{
+  border: 1px #D9D9D9 solid;
+  border-radius: 20px;
+  width: 400px;
+  transition: all 350ms;
+}
+
+.inner .about-search-top input{
+  color: #202020;
+}
+
+.inner .about-search-top input[type='submit']{
+  background: url(img/search-black.svg) center center no-repeat;
+}
+
+.inner .about-search-top input[type='submit']:hover{
+  background: url(img/search-hover.svg) center center no-repeat;
+}
+
+.inner .search-open{
+  border: 1px #B0B0B0 solid;
+}

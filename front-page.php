@@ -9,11 +9,7 @@
                 <?php the_content(); ?>
             </div>
             <div class="about-search">
-                <form role="search" method="get" class="search-form" action="">
-                <label><span class="strong">Escribe el nombre de quien buscas</span>
-                <input type="search" class="search-field" placeholder="p.ej, Piñera" value="" name="s" title="" /></label>
-                <input type="submit" class="search-submit" value="" />
-                </form>
+                <?php get_search_form(); ?>
             </div>
         </div>
     </div>
