@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta property="og:image" content="/img/preview.png" />
+    <meta property="og:image" content="/img/preview.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/favicon.png">
 <?php wp_head(); ?>
   <title><?php echo wp_get_document_title(); ?></title>
 </head>
@@ -39,15 +40,15 @@
         </div>
         <div class="slogan animate__animated animate__fadeIn">
             <h1><?php the_field('cf-slogan'); ?></h1>
-            <a href="" class="btn-big"><?php the_field('cf-slogan-btn'); ?> <i class="fas fa-chevron-right"></i></a>
+            <a href="denuncia/" class="btn-big"><?php the_field('cf-slogan-btn'); ?> <i class="fas fa-chevron-right"></i></a>
         </div>
         <section class="header-person-flex">
         
             <?php
                // WP_Query arguments
                 $args = array(
-                'post_type'              => array( 'page' ),
-                'post_status'            => array( 'publish' ), 
+                'post_type'    => array( 'page' ),
+                'post_status'  => array( 'publish' ), 
                 'meta_key'     => array( '_wp_page_template' ), 
                 'meta_value'   => array( 'big.php' )
                 );

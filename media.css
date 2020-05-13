@@ -112,6 +112,9 @@ li.current-menu-item a,
   margin: 20px 0;
 }
 
+.header-person:last-child{
+  display: none;
+}
 }
 
 @media (max-width: 480px) {
@@ -206,5 +209,16 @@ li.current-menu-item a,
   width: 100%;
 }
 
+.codedropz-upload-handler{
+  width: 100%;
+}
+
+.codedropz-upload-inner h3{
+  display: none;
+}
+
+.header-person-flex{
+  display: none;
+}
 
 }
