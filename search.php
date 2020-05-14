@@ -31,7 +31,7 @@ if ( $the_query->have_posts() ) {
 	<div class="search-results">
        	<p>Resultados de búsqueda para: <span class="search-word">"<?php the_search_query() ?>"</span></p>
     </div>
-    <div class="person-flex">
+    <div class="person-flex archive">
 
 <?php
     while ( $the_query->have_posts() ) {

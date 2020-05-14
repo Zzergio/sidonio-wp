@@ -22,7 +22,7 @@ Template Name: Personas
 					
 					<?php
             global $post;
-            $myposts = get_posts( 'numberposts=12' );
+            $myposts = get_posts();
             foreach( $myposts as $post ){
             setup_postdata( $post );
         ?>
@@ -48,6 +48,7 @@ Template Name: Personas
             <div class="person-aggression">
                 <div class="bar-wrap">
                     <div class="bar" style="width:<?php the_field('cf-rate'); ?>%;"></div>
+                    <div class="slider" style="position: absolute; bottom: -12px; left:calc( <?php the_field('cf-rate'); ?>% - 3px);"><img src="<?php bloginfo('template_url'); ?>/img/slider.svg" alt=""></div>
                 </div>
                 <div class="person-digits" style="margin-left: calc( <?php the_field('cf-rate'); ?>% - 13px );"><p><?php the_field('cf-rate'); ?>%</p></div>
             </div>

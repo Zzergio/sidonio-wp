@@ -13,7 +13,7 @@
                     <h2><?php single_cat_title(); ?></h2>
                 </div>
 
-                <div class="person-flex">
+                <div class="person-flex archive">
 					
 				<?php if ( have_posts() ) : 
                     while ( have_posts() ) :
@@ -41,6 +41,7 @@
             <div class="person-aggression">
                 <div class="bar-wrap">
                     <div class="bar" style="width:<?php the_field('cf-rate'); ?>%;"></div>
+                    <div class="slider" style="position: absolute; bottom: -12px; left:calc( <?php the_field('cf-rate'); ?>% - 3px);"><img src="<?php bloginfo('template_url'); ?>/img/slider.svg" alt=""></div>
                 </div>
                 <div class="person-digits" style="margin-left: calc( <?php the_field('cf-rate'); ?>% - 13px );"><p><?php the_field('cf-rate'); ?>%</p></div>
             </div>

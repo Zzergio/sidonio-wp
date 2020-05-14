@@ -80,7 +80,19 @@
         <h2>ETIQUETAS DE PERSONAS</h2>
     </div>
         <div class="alltags">
-            <?php wp_tag_cloud('orderby=name&smallest=10.5&largest=10.5'); ?>
+            <?php 
+        $tags = get_tags( [
+            'orderby'      => 'name',
+            'order'        => 'ASC',
+            'hide_empty'   => 0,
+            ] );
+        foreach ( $tags as $tag ) {
+            $tag_link = get_tag_link( $tag->term_id );
+            $html = "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+            $html .= "{$tag->name}</a>";
+            echo $html; 
+            }
+    ?>
         </div>
     </div>
 </section>
@@ -122,6 +134,7 @@
             <div class="person-aggression">
                 <div class="bar-wrap">
                     <div class="bar" style="width:<?php the_field('cf-rate'); ?>%;"></div>
+                    <div class="slider" style="position: absolute; bottom: -12px; left:calc( <?php the_field('cf-rate'); ?>% - 3px);"><img src="<?php bloginfo('template_url'); ?>/img/slider.svg" alt=""></div>
                 </div>
                 <div class="person-digits" style="margin-left: calc( <?php the_field('cf-rate'); ?>% - 13px );"><p><?php the_field('cf-rate'); ?>%</p></div>
             </div>

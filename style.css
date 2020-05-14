@@ -532,6 +532,10 @@ li.current-menu-item a,
   flex-wrap: wrap;
 }
 
+.person-flex.archive{
+  justify-content: flex-start;
+}
+
 .person-section .wrap{
   padding-top: 0;
 }
@@ -542,7 +546,7 @@ li.current-menu-item a,
   justify-content: center;
   align-items: center;
   width: 214px;
-  margin: 0 10px 40px 10px;
+  margin: 0 20px 40px 20px;
 }
 
 .person-face{
@@ -579,6 +583,7 @@ li.current-menu-item a,
   width: 212px;
   background: #7B9E17;
   margin: 16px 0 10px 0;
+  position: relative;
 }
 .bar-wrap:not(:first-child) {
   margin-top: 1em;
@@ -1137,4 +1142,18 @@ textarea.form-input{
 
 .inner .search-open{
   border: 1px #B0B0B0 solid;
+}
+
+.inner-personas-left .current-cat a{
+  color: #fff;
+  background: #7B9E17;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.inner-personas-left .alltags a.active-tag{
+  color: #fff;
+  background: #7B9E17;
+  border-radius: 3px;
+  font-weight: bold;
 }
